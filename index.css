@@ -1,0 +1,122 @@
+
+[v-cloak] {
+  display: none;
+}
+
+html, body, #app {
+  background-color: #333;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone {
+  height: 560px;
+  max-width: 100%;
+  background-color: #fff;
+}
+
+.nav-head {
+	display: flex;
+	justify-content:center;
+  align-items: center;
+}
+
+.nav-head div {
+  margin: 0px 20px;
+}
+
+#btn-previous, #btn-next {
+  cursor: pointer;
+}
+
+.head, .body {
+  background-color: #fafafa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+}
+
+.head {
+  display: flex;
+  padding-top: 50px;
+  padding-bottom: 5px;
+}
+
+.tag {
+  width: calc(100% / 7);
+  text-align: center;
+  font-size: 12px;
+}
+
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+.daybox {
+  box-sizing: border-box;
+  width: calc(100% / 7);
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.infos {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.active {
+  border-radius: 50%;
+  color: white;
+  background-color: #222;
+}
+
+.num {
+  font-size: 20px;
+  padding-top: 5px;
+}
+
+.eventdot {
+  width: 6px;
+  height: 6px;
+  background-color: #f7416b;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.has-event {
+  opacity: 1;
+}
+
+.todo-list {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.time, .title {
+	padding: 4px 10px;
+}
+
+.item {
+	display: flex;
+	padding: 3px 10px;
+	border-bottom: 1px solid rgba(0,0,0,0.1)
+}
+
+.fade-enter-active, .fade-leave-active {
+	transition: 0.5s;
+}
+
+.fade-enter, .fade-leave-to {
+	opacity: 0;
+	transform: translateY(30px);
+}

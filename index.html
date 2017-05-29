@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+</head>
+
+<body>
+  <div id="app">
+    <div class="phone" v-cloak>
+      <div class="calender container" >
+        <div class="nav-head">
+          <div id="btn-previous" v-on:click="previous_month(year, month)">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+          </div>
+          <div>
+            <h1>{{ year }}年{{ month }}月</h1>
+          </div>
+          <div id="btn-next" v-on:click="next_month(year, month)">
+            <i class="fa fa-chevron-right" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="head">
+          <div class="tag" v-for="tag in tags">{{ tag }}</div>
+        </div>
+        <div class="body">
+          <div class="daybox" v-for="(day,day_id) in days" v-bind:style="get_padding(day_id)">
+            <div class="infos" v-bind:class="day_id==selected_day?'active':''" v-on:click="selected_day=day_id">
+              <div class="num">{{ day.number }}</div>
+            </div>
+            <div class="eventdot" v-bind:class="{'has-event':day.events.length > 0}"></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <transition-group tag="ul" name="fade" class="todo-list" mode="out-in">
+          <li class="item" v-bind:key="event" v-for="event in now_events">
+            <div class="time">{{ event.time }}</div>
+            <div class="title">{{ event.title }}</div>
+          </li>
+        </transition-group>
+      </div>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="vue.js"></script>
+</body>
+
+</html>
